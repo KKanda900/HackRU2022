@@ -13,8 +13,6 @@ export default function HomePage() {
             </div>
             <div class='content-start'>
                 <PitchText />
-                <div>1</div>
-                <div>2</div>
             </div>
         </Container>
     )
