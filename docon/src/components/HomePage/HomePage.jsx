@@ -8,7 +8,7 @@ export default function HomePage() {
     return (
         <Container>
             <NavBar />
-            <div align='center'>
+            <div class='pt-10'>
                 <Title />
             </div>
             <PitchText />

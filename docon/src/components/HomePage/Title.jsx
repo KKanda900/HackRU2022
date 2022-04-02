@@ -4,12 +4,9 @@ import logo from '../../assets/health-care.svg'
 export default function Title() {
     return (
         <div class="flex items-center">
+            <img src={logo} class='pb-3' width='70px'/>
             <div>
-                <img src={logo}/>
-            </div>
-            <div>
-                <strong>Andrew Alfred</strong>
-                <span>Technical advisor</span>
+                <h1 class='font-railway text-2xl'>Doc On</h1>
             </div>
         </div>
     );
