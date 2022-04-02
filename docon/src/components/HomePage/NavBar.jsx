@@ -7,11 +7,11 @@ export default function NavBar() {
     return (
         <Navbar>
             <Container>
-                <Navbar.Brand href="#home">Doc On</Navbar.Brand>
+                <Navbar.Brand href="/">Doc On</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <button class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                        Login
+                        <a class='text-white' href='/login'>Login</a>
                     </button>
                 </Navbar.Collapse>
             </Container>

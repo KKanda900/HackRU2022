@@ -1,5 +1,6 @@
 import './App.css';
-import Login from './components/Login/Login';
+import Signin from './components/Login/Signin';
+import Login from './components/Login/Login'
 import HomePage from './components/HomePage/HomePage';
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
@@ -22,6 +23,8 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path={'/'} element={<HomePage/>}/>
+				<Route path={'/login'} element={<Signin/>}/>
+				<Route path={'/signup'} element={<Login/>}/>
 			</Routes>
 		</BrowserRouter>
 	);
