@@ -1,11 +1,12 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 import UserNavBar from './UserNavBar'
 
 export const Dashboard = () => {
     return (
-        <div>
-            <UserNavBar/>
+        <Container>
+            <UserNavBar />
             <h1>Welcome user!</h1>
-        </div>
+        </Container>
     )
 }
