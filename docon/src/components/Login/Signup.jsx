@@ -2,7 +2,7 @@ import NavBar from './LoginNavBar'
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import { useState, useEffect } from 'react'
-import { doc, setDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
 import { db } from '../../firebase'
 
 function toggle_switch() {
@@ -14,8 +14,6 @@ export default function Signup() {
     const [doctor, setDoctor] = useState(false);
 
     const signup = async (e) => {
-
-        console.log("Button was Clicked\n")
 
         const full_name = document.getElementById("fullname").value 
         const username = document.getElementById("username").value
@@ -30,6 +28,9 @@ export default function Signup() {
             doctor: doctor
         });
 
+        var curr_user = {full_name: full_name, username: username, password: password, insurance_name: insurance_name, doctor:doctor}
+        var user = window.sessionStorage.setItem("CurrUser", JSON.stringify(curr_user));
+        window.location.href = "../dashboard"
     }
 
     return (
