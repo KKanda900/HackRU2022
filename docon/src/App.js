@@ -3,6 +3,11 @@ import Login from './components/Login/Login';
 import HomePage from './components/HomePage/HomePage';
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
+import {
+	BrowserRouter,
+	Routes,
+	Route,
+} from "react-router-dom";
 
 /* async function add() {
 	await setDoc(doc(db, "cities", "LA"), {
@@ -14,8 +19,12 @@ import { db } from './firebase';
 
 function App() {
 	return (
-    <Login/>
-  );
+		<BrowserRouter>
+			<Routes>
+				<Route path={'/'} element={<HomePage/>}/>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
