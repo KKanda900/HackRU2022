@@ -1,23 +1,20 @@
 import './App.css';
+import HomePage from './components/HomePage/HomePage';
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
 
 async function add() {
-  await setDoc(doc(db, "cities", "LA"), {
-    name: "Los Angeles",
-    state: "CA",
-    country: "USA"
-  });
+	await setDoc(doc(db, "cities", "LA"), {
+		name: "Los Angeles",
+		state: "CA",
+		country: "USA"
+	});
 }
 
 function App() {
-  add()
-  return (
-    <div className="App">
-      <h1 className="text-6xl font-bold">
-        DocOn
-      </h1>
-    </div>
+	add()
+	return (
+		<HomePage/>
   );
 }
 
