@@ -3,6 +3,7 @@ import Signin from './components/Login/Signin';
 import Login from './components/Login/Login'
 import HomePage from './components/HomePage/HomePage';
 import { Dashboard } from './components/Dashboards/ClientDashboard/Dashboard';
+import { RequestForm } from './components/Dashboards/ClientDashboard/RequestDoctor/RequestForm';
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
 import {
@@ -27,6 +28,7 @@ function App() {
 				<Route path={'/login'} element={<Signin/>}/>
 				<Route path={'/signup'} element={<Login/>}/>
 				<Route path={'/dashboard'} element={<Dashboard/>}/>
+				<Route path={'/request'} element={<RequestForm/>}/>
 			</Routes>
 		</BrowserRouter>
 	);
