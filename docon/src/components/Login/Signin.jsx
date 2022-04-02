@@ -36,11 +36,11 @@ export default function Signin() {
         }
 
         if (check == true) {
-            console.log("Login Successful")
             var user = window.sessionStorage.setItem("CurrUser", JSON.stringify(curr_user));
             window.location.href = "../dashboard"
         } else {
-            console.log("OOPSIE")
+            alert("Incorrect Username and Password!");
+            window.location.href = "./login"
         }
 
     }

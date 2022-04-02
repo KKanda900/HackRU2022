@@ -2,7 +2,7 @@ import NavBar from './LoginNavBar'
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import { useState, useEffect } from 'react'
-import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { collection, doc, getDoc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore'
 import { db } from '../../firebase'
 
 function toggle_switch() {
@@ -12,6 +12,16 @@ function toggle_switch() {
 
 export default function Signup() {
     const [doctor, setDoctor] = useState(false);
+    const [users, setUsers] = useState([]);
+
+    useEffect(
+        () =>
+            onSnapshot(query(collection(db, "Users"), orderBy("username", "desc")),
+                (snapshot) => {
+                    setUsers((users) => snapshot.docs);
+                }),
+        []
+    );
 
     const signup = async (e) => {
 
@@ -19,6 +29,19 @@ export default function Signup() {
         const username = document.getElementById("username").value
         const password = document.getElementById("password").value
         const insurance_name = document.getElementById("insurancename").value
+
+        // if users doesn't equal null then compare the username and password
+        if(users != null) {
+            for(var i = 0; i <= users.length-1; i++) {
+                if(username == users[i].data().username) {
+                    alert("Username exists!")
+                    window.location.href = "./signup"
+                } else if(password == users[i].data().password){
+                    alert("Password exists!")
+                    window.location.href = "./signup"
+                }
+            }
+        }
         
         await setDoc(doc(db, "Users", username), {
             full_name: full_name, 
