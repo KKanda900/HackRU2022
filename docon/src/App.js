@@ -2,7 +2,7 @@ import './App.css';
 import Signin from './components/Login/Signin';
 import Login from './components/Login/Login'
 import HomePage from './components/HomePage/HomePage';
-import { Dashboard } from './components/Dashboard/Dashboard';
+import { Dashboard } from './components/Dashboards/ClientDashboard/Dashboard';
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
 import {
