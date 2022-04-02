@@ -2,7 +2,8 @@ import NavBar from './LoginNavBar'
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import { useState, useEffect } from 'react'
-import { setDoc } from 'firebase/firestore'
+import { doc, setDoc } from 'firebase/firestore'
+import { db } from '../../firebase'
 
 function toggle_switch() {
     document.getElementById("checkbox").checked = !document.getElementById("checkbox").checked
@@ -21,6 +22,13 @@ export default function Signup() {
         const password = document.getElementById("password").value
         const insurance_name = document.getElementById("insurancename").value
         
+        await setDoc(doc(db, "Users", username), {
+            full_name: full_name, 
+            username: username, 
+            password: password,
+            insurance_name: insurance_name,
+            doctor: doctor
+        });
 
     }
 
@@ -61,7 +69,7 @@ export default function Signup() {
                             <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="insurancename" type="insurancename" placeholder="Insurance Name" />
                         </div>
                         <div className="flex items-center justify-between">
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={signup} type="button">
                                 Sign Up
                             </button>
                             <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
@@ -97,7 +105,7 @@ export default function Signup() {
                             <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="insurancename" type="insurancename" placeholder="Insurance Name" />
                         </div>
                         <div className="flex items-center justify-between">
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={signup} type="button">
                                 Sign Up
                             </button>
                             <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
