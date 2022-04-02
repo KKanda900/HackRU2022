@@ -1,9 +1,16 @@
 import React from 'react'
+import logo from '../../assets/health-care.svg'
 
 export default function Title() {
     return (
-        <div>
-            <h1 class='font-railway text-2xl'>Doc On</h1>
+        <div class="flex items-center">
+            <div>
+                <img src={logo}/>
+            </div>
+            <div>
+                <strong>Andrew Alfred</strong>
+                <span>Technical advisor</span>
+            </div>
         </div>
-    )
+    );
 }

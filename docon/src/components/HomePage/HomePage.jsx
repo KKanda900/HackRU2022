@@ -11,9 +11,7 @@ export default function HomePage() {
             <div align='center'>
                 <Title />
             </div>
-            <div class='content-start'>
-                <PitchText />
-            </div>
+            <PitchText />
         </Container>
     )
 }
