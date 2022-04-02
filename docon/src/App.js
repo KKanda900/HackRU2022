@@ -2,6 +2,7 @@ import './App.css';
 import Signin from './components/Login/Signin';
 import Login from './components/Login/Login'
 import HomePage from './components/HomePage/HomePage';
+import { Dashboard } from './components/Dashboard/Dashboard';
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
 import {
@@ -25,6 +26,7 @@ function App() {
 				<Route path={'/'} element={<HomePage/>}/>
 				<Route path={'/login'} element={<Signin/>}/>
 				<Route path={'/signup'} element={<Login/>}/>
+				<Route path={'/dashboard'} element={<Dashboard/>}/>
 			</Routes>
 		</BrowserRouter>
 	);
