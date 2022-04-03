@@ -33,13 +33,10 @@ export default function Signup() {
         // if users doesn't equal null then compare the username and password
         if(users != null) {
             for(var i = 0; i <= users.length-1; i++) {
-                if(username == users[i].data().username) {
-                    alert("Username exists!")
+                if(username == users[i].data().username && password == users[i].data().password) {
+                    alert("Login Exists!")
                     window.location.href = "./signup"
-                } else if(password == users[i].data().password){
-                    alert("Password exists!")
-                    window.location.href = "./signup"
-                }
+                } 
             }
         }
         
