@@ -41,10 +41,6 @@ export const Dashboard = () => {
     const [value, onChange] = useState(new Date());
     const [val, setValue] = useState(false)
 
-    const clickDate = async (e) => {
-
-    }
-
     return (
         <Container>
             <UserNavBar />
