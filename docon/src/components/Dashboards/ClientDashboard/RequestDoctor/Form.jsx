@@ -19,7 +19,7 @@ export const Form = () => {
     var curr_user = window.sessionStorage.getItem("CurrUser")
     var curr_user_json = JSON.parse(curr_user)
 
-    const doctors = new Array(5)
+    var doctors = new Array(5)
     var docInd = 0
 
     for (var i = 0; i <= users.length - 1; i++) {
