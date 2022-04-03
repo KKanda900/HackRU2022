@@ -7,6 +7,7 @@ import {TabOverviewData} from './Constants'
 
 var curr_user = window.sessionStorage.getItem("CurrUser")
 var curr_user_json = JSON.parse(curr_user)
+console.log(curr_user_json)
 
 export const Dashboard = () => {
     return (

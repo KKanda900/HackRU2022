@@ -19,8 +19,6 @@ export default function Signin() {
 
     const signin = async (e) => {
 
-        console.log("BUTTON CLICKED")
-
         const username = document.getElementById("username").value
         const password = document.getElementById("password").value
 
@@ -28,16 +26,20 @@ export default function Signin() {
         var curr_user = null
 
         for (var i = 0; i <= users.length - 1; i++) {
-            if (username == users[i].data().username && password == users[i].data().password) {
+            if (username === users[i].data().username && password === users[i].data().password) {
                 check = true;
                 curr_user = users[i].data()
+                console.log(curr_user)
                 break
             }
         }
 
-        if (check == true) {
+        if (check === true && (curr_user.doctor === true)) {
             var user = window.sessionStorage.setItem("CurrUser", JSON.stringify(curr_user));
-            window.location.href = "../dashboard"
+            window.location.href = "/admin"
+        } else if (check === true && (curr_user.doctor === false)) {
+            var user = window.sessionStorage.setItem("CurrUser", JSON.stringify(curr_user));
+            window.location.href = '/dashboard'
         } else {
             alert("Incorrect Username and Password!");
             window.location.href = "./login"
