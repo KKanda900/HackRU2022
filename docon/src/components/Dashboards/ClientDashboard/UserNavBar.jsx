@@ -11,6 +11,7 @@ export default function NavBar() {
                 <Nav className="me-auto">
                     <Nav.Link href="/request">Request Doctor</Nav.Link>
                     <Nav.Link href="/hospitals">View Hospitals</Nav.Link>
+                    <Nav.Link href="/drResponses">Doctor Responses</Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">

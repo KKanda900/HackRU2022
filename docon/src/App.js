@@ -8,6 +8,7 @@ import { HospitalDashboard } from './components/Dashboards/ClientDashboard/ViewH
 import { Admins } from './components/Dashboards/DoctorDashboard/Admins';
 import { ViewRequests } from './components/Dashboards/DoctorDashboard/ViewRequests/ViewRequests';
 import { ViewPatients } from './components/Dashboards/DoctorDashboard/ViewPatients/ViewPatients';
+import { DoctorResponses } from './components/Dashboards/ClientDashboard/DoctorResponses/DoctorResponses';
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
 import {
@@ -28,6 +29,7 @@ function App() {
 				<Route path={'/patientrequests'} element={<ViewRequests/>}/>
 				<Route path={'/patients'} element={<ViewPatients/>}/>
 				<Route path={'/request'} element={<RequestForm/>}/>
+				<Route path={'/drResponses'} element={<DoctorResponses/>}/>
 				<Route path={'/hospitals'} element={<HospitalDashboard/>}/>
 			</Routes>
 		</BrowserRouter>
