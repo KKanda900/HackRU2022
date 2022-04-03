@@ -10,8 +10,8 @@ export default function NavBar() {
             <Container>
                 <Navbar.Brand href="/admin">Doc On</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="/patientrequests">View Patients</Nav.Link>
-                    <Nav.Link href="/patients">View Requests</Nav.Link>
+                    <Nav.Link href="/patients">View Patients</Nav.Link>
+                    <Nav.Link href="/patientrequests">View Requests</Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">

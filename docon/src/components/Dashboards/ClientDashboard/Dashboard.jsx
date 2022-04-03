@@ -47,20 +47,32 @@ export const Dashboard = () => {
             <div class='grid grid-cols-3 pt-10'>
                 <div class='col-span-2'>
                     <h3>Overview of {curr_user_json.full_name}</h3>
-                    <Chart
-                        chartType="LineChart"
-                        width="100%"
-                        height="400px"
-                        data={data_1}
-                        options={options_1}
-                    />
-                    <Chart
-                        chartType="LineChart"
-                        width="100%"
-                        height="400px"
-                        data={data_2}
-                        options={options_2}
-                    />
+                    <p className='mt-4'>Doctor: {curr_user_json.doctor_name ? (curr_user_json.doctor_name) : ("Find a Doctor Now with the request option")}</p>
+                    {curr_user_json.doctor_name ?
+                        (
+                            <>
+                                <Chart
+                                    chartType="LineChart"
+                                    width="100%"
+                                    height="400px"
+                                    data={data_1}
+                                    options={options_1}
+                                />
+                                <Chart
+                                    chartType="LineChart"
+                                    width="100%"
+                                    height="400px"
+                                    data={data_2}
+                                    options={options_2}
+                                />
+                            </>
+                        ) : (
+                            <>
+
+                            </>
+                        )
+
+                    }
                 </div>
                 <div>
                     <h3>Appointments</h3>
@@ -71,18 +83,17 @@ export const Dashboard = () => {
                                 <h1 className='text-3xl'>Appointment Information</h1>
                                 <p>Type: Dental Cleaning</p>
                                 <p>Doctor: Doctor Vu</p>
-                                <p>Day: </p>
                                 <p>Time: 3:00pm</p>
                             </div>
                         </>
-                            ) : (
-                            <>
+                    ) : (
+                        <>
 
-                            </>
-                            )
-                
+                        </>
+                    )
+
                     }
-                        </div>
+                </div>
             </div>
         </Container>
     )

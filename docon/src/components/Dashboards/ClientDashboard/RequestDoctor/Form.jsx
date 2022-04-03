@@ -52,7 +52,7 @@ export const Form = () => {
 
         if(doc_info.patient == null) {
             patients = []
-            patients.push(curr_user_json.username)
+            patients.push(curr_user_json)
             await setDoc(doc(db, "Users", doc_name), {
                 full_name: doc_info.full_name, 
                 username: doc_info.username, 
@@ -63,7 +63,7 @@ export const Form = () => {
             })
         } else {
             patients = doc_info.patient
-            patients.push(curr_user_json.username)
+            patients.push(curr_user_json)
             await setDoc(doc(db, "Users", doc_name), {
                 full_name: doc_info.full_name, 
                 username: doc_info.username, 
@@ -89,6 +89,9 @@ export const Form = () => {
             username: curr_user_json.username,
             request: document.getElementById("req").value
         });
+
+        var curr_user = { full_name: curr_user_json.full_name, username: curr_user_json.username, password: curr_user_json.password, insurance_name: curr_user_json.insurance_name, doctor: curr_user_json.doctor, doctor_name: doc_name}
+        var user = window.sessionStorage.setItem("CurrUser", JSON.stringify(curr_user));
 
         window.location.href = "./dashboard" 
     }
