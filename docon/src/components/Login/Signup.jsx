@@ -43,6 +43,7 @@ export default function Signup() {
         await setDoc(doc(db, "Users", username), {
             full_name: full_name, 
             username: username, 
+            gender: document.getElementById("gender").value,
             password: password,
             insurance_name: insurance_name,
             doctor: doctor
@@ -69,6 +70,12 @@ export default function Signup() {
                                 Full Name
                             </label>
                             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fullname" type="text" placeholder="Full Name" />
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" for="gender">
+                                Gender
+                            </label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="gender" type="text" placeholder="Type your gender out..." />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -105,6 +112,12 @@ export default function Signup() {
                                 Full Name
                             </label>
                             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fullname" type="text" placeholder="Full Name" />
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" for="gender">
+                                Gender
+                            </label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="gender" type="text" placeholder="Type your gender out..." />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" for="username">

@@ -41,13 +41,16 @@ export const Form = () => {
     const submitReq = async (e) => {
 
         const doc_name = value
-        console.log(doc_name)
-        var doc_info = await getDoc(doc(db, "Users", doc_name))
+        var doc_info = null
+        for(var i = 0; i <= users.length-1; i++) {
+            if(doc_name == users[i].data().full_name) {
+                doc_info = users[i].data()
+            }
+        }
 
         var patients = null
 
-        doc_info = doc_info.data()
-        if(doc_info.patient == []) {
+        if(doc_info.patient == null) {
             patients = []
             patients.push(curr_user_json.username)
             await setDoc(doc(db, "Users", doc_name), {
