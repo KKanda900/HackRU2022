@@ -51,7 +51,11 @@ export default function Signup() {
 
         var curr_user = { full_name: full_name, username: username, password: password, insurance_name: insurance_name, doctor: doctor }
         var user = window.sessionStorage.setItem("CurrUser", JSON.stringify(curr_user));
-        window.location.href = "../dashboard"
+        if(doctor == true) {
+            window.location.href = "../admin"
+        } else {
+            window.location.href = "../dashboard"
+        }
     }
 
     return (
