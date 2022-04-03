@@ -4,6 +4,7 @@ import Login from './components/Login/Login'
 import HomePage from './components/HomePage/HomePage';
 import { Dashboard } from './components/Dashboards/ClientDashboard/Dashboard';
 import { RequestForm } from './components/Dashboards/ClientDashboard/RequestDoctor/RequestForm';
+import { HospitalDashboard } from './components/Dashboards/ClientDashboard/ViewHospitals/HospitalDashboard';
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
 import {
@@ -11,14 +12,6 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
-
-/* async function add() {
-	await setDoc(doc(db, "cities", "LA"), {
-		name: "Los Angeles",
-		state: "CA",
-		country: "USA"
-	});
-} */
 
 function App() {
 	return (
@@ -29,6 +22,7 @@ function App() {
 				<Route path={'/signup'} element={<Login/>}/>
 				<Route path={'/dashboard'} element={<Dashboard/>}/>
 				<Route path={'/request'} element={<RequestForm/>}/>
+				<Route path={'/hospitals'} element={<HospitalDashboard/>}/>
 			</Routes>
 		</BrowserRouter>
 	);

@@ -2,7 +2,8 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import UserNavBar from './UserNavBar'
 import Calendar from 'react-calendar'
-import { Card, CardGroup } from 'react-bootstrap'
+import { TabOverview } from './TabOverview'
+import {TabOverviewData} from './Constants'
 
 var curr_user = window.sessionStorage.getItem("CurrUser")
 var curr_user_json = JSON.parse(curr_user)
@@ -18,6 +19,15 @@ export const Dashboard = () => {
                 <div>
                     <h3>Appointments</h3>
                     <Calendar />
+                </div>
+                <div class='px-8 pt-12'>
+                    <TabOverview title={TabOverviewData.TITLE_A} blurb={TabOverviewData.BLURB_A} link={TabOverviewData.LINK_A}/>
+                </div>
+                <div class='px-8 pt-8'>
+                    <TabOverview title={TabOverviewData.TITLE_B} blurb={TabOverviewData.BLURB_B} link={TabOverviewData.LINK_B}/>
+                </div>
+                <div class='px-8 pt-12'>
+                    <TabOverview title={TabOverviewData.TITLE_C} blurb={TabOverviewData.BLURB_C} link={TabOverviewData.LINK_C}/>
                 </div>
             </div>
         </Container>
