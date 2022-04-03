@@ -17,10 +17,10 @@ export const TextField = () => {
 
     // pushes data to hospitals containing JSON objects
     const hospitals = []
-    const consolidateJSON= () => {
+    const consolidateJSON = () => {
         if (data != null) {
             for (const key of Object.keys(data)) {
-                if(data[key].features){
+                if (data[key].features) {
                     console.log(data[key].features)
                     hospitals.push(data[key].features.map(hospital => hospital.attributes))
                 }
@@ -29,10 +29,34 @@ export const TextField = () => {
     }
     consolidateJSON()
     // populates array with hospital data JSONs
-    console.log(hospitals)
+    console.log(hospitals[0])
 
+    const hospitalNames = []
+    const hospitalLocation = []
+    const hospitalAddress = []
+    const hospitalTelephone = []
+    const createDynamicTable = async () => {
+        // console.log(hospitals)
+        if (hospitals.length != 0) {
+            for (const key in Object.keys(hospitals[0])) {
+                const hospitalValue = hospitals[0][key]
+                hospitalNames.push(hospitalValue.NAME)
+                hospitalLocation.push([hospitalValue.LATITUDE, hospitalValue.LONGITUDE])
+                hospitalAddress.push(hospitalValue.ADDRESS)
+                hospitalTelephone.push(hospitalValue.TELEPHONE)
+            }
+        }
+    }
+
+    createDynamicTable()
+    console.log(hospitalNames)
+    console.log(hospitalLocation)
+    console.log(hospitalAddress)
+    console.log(hospitalTelephone)
 
     return (
-        <h1 class='font-railway'>Local Hospitals around New Brunswick</h1>
+        <div>
+            <h1 class='font-railway'>Local Hospitals around New Brunswick</h1>
+        </div>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav'
-import { NavDropdown } from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 
@@ -11,7 +10,7 @@ export default function NavBar() {
                 <Navbar.Brand href="/dashboard">Doc On</Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link href="/request">Request Doctor</Nav.Link>
-                    <Nav.Link href="#link">View Hospitals</Nav.Link>
+                    <Nav.Link href="/hospitals">View Hospitals</Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
