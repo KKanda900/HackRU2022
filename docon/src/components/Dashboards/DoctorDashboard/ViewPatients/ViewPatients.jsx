@@ -42,11 +42,6 @@ export const ViewPatients = () => {
     }
 
     return (
-<<<<<<< HEAD
-        <div>
-            {renderPatients()}
-        </div>
-=======
         <Container>
             {patients ? (
                 <><NavBar />
@@ -78,6 +73,5 @@ export const ViewPatients = () => {
                 </>
             )}
         </Container>
->>>>>>> 1ac982d97247d95b8fa4b87bc7cab917194cd944
     )
 }
