@@ -82,7 +82,7 @@ export const Dashboard = () => {
                             <div className='mt-9 ml-33'>
                                 <h1 className='text-3xl'>Appointment Information</h1>
                                 <p>Type: Dental Cleaning</p>
-                                <p>Doctor: Doctor Vu</p>
+                                <p>Doctor: {curr_user_json.doctor_name ? (curr_user_json.doctor_name) : ("Doctor Vu")}</p>
                                 <p>Time: 3:00pm</p>
                             </div>
                         </>
