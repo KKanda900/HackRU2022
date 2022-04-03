@@ -58,8 +58,8 @@ export const Form = () => {
         mssgs.push(document.getElementById("req").value)
 
         await setDoc(doc(db, "Users", doc_info.username), {
-            full_name: doc_info.full_name, 
-            username: doc_info.username, 
+            full_name: doc_info.full_name,
+            username: doc_info.username,
             password: doc_info.password,
             insurance_name: doc_info.insurance_name,
             doctor: doc_info.doctor,

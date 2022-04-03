@@ -1,13 +1,11 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import NavBar from './AdminNavBar/AdminNavBar'
-import { Content } from './AdminContent/Content'
+import NavBar from '../AdminNavBar/AdminNavBar'
 
-export const Admins = () => {
+export const ViewPatients = () => {
     return (
         <Container>
             <NavBar/>
-            <Content/>
         </Container>
     )
 }

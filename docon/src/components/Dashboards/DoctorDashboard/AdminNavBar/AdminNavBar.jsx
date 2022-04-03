@@ -8,10 +8,10 @@ export default function NavBar() {
     return (
         <Navbar>
             <Container>
-                <Navbar.Brand href="/dashboard">Doc On</Navbar.Brand>
+                <Navbar.Brand href="/admin">Doc On</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="/request">Request Doctor</Nav.Link>
-                    <Nav.Link href="#link">View Hospitals</Nav.Link>
+                    <Nav.Link href="/patientrequests">View Patients</Nav.Link>
+                    <Nav.Link href="/patients">View Requests</Nav.Link>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
