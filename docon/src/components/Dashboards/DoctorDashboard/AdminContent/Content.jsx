@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react'
 import Calendar from 'react-calendar'
 import { Chart } from "react-google-charts";
+import { db } from '../../../../firebase';
 
 var curr_user = window.sessionStorage.getItem("CurrUser")
 var curr_user_json = JSON.parse(curr_user)
@@ -33,6 +35,28 @@ export const options = {
 export const Content = () => {
     const [value, onChange] = useState(new Date());
     const [val, setValue] = useState(false)
+
+    const [users, setUsers] = useState([]);
+
+    var curr_user = null
+
+    useEffect(
+        () =>
+            onSnapshot(query(collection(db, "Users"), orderBy("username", "desc")),
+                (snapshot) => {
+                    setUsers((users) => snapshot.docs);
+                }),
+        []
+    );
+
+    for(var i = 0; i <= users.length-1; i++) {
+        console.log(users[i].data())
+        if(curr_user_json.username === users[i].data().username) {
+            curr_user = users[i].data()
+        }
+    }
+
+    console.log(curr_user)
 
     return (
         <div class='grid grid-cols-3'>

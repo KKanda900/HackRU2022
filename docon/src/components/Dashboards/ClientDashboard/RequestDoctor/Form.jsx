@@ -53,7 +53,7 @@ export const Form = () => {
         if(doc_info.patient == null) {
             patients = []
             patients.push(curr_user_json)
-            await setDoc(doc(db, "Users", doc_name), {
+            await setDoc(doc(db, "Users", doc_info.username), {
                 full_name: doc_info.full_name, 
                 username: doc_info.username, 
                 password: doc_info.password,
@@ -64,7 +64,7 @@ export const Form = () => {
         } else {
             patients = doc_info.patient
             patients.push(curr_user_json)
-            await setDoc(doc(db, "Users", doc_name), {
+            await setDoc(doc(db, "Users", doc_info.username), {
                 full_name: doc_info.full_name, 
                 username: doc_info.username, 
                 password: doc_info.password,

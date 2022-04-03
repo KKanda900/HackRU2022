@@ -72,7 +72,7 @@ export const TextField = () => {
                             {
                                 totalRows.map(
                                     (item, index) => (
-                                        <tr>
+                                        <tr key={item.name}>
                                             <td key={index + 1} ><h6 class='pl-8 pt-4'>{item.name}</h6></td>
                                             <td key={index + 2}><a href={item.link} target="_blank" class='pl-8'>Link!</a></td>
                                             <td key={index + 3} class='pl-8'>{item.addr}</td>
