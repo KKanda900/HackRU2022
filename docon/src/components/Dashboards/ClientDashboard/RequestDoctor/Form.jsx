@@ -60,7 +60,7 @@ export const Form = () => {
             request: document.getElementById("req").value
         });
 
-        window.location.href = "./dashboard"
+        window.location.href = "./dashboard" 
     }
 
     return (
