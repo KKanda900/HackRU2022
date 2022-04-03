@@ -25,30 +25,30 @@ export default function Signup() {
 
     const signup = async (e) => {
 
-        const full_name = document.getElementById("fullname").value 
+        const full_name = document.getElementById("fullname").value
         const username = document.getElementById("username").value
         const password = document.getElementById("password").value
         const insurance_name = document.getElementById("insurancename").value
 
         // if users doesn't equal null then compare the username and password
-        if(users != null) {
-            for(var i = 0; i <= users.length-1; i++) {
-                if(username == users[i].data().username && password == users[i].data().password) {
+        if (users != null) {
+            for (var i = 0; i <= users.length - 1; i++) {
+                if (username == users[i].data().username && password == users[i].data().password) {
                     alert("Login Exists!")
                     window.location.href = "./signup"
-                } 
+                }
             }
         }
-        
+
         await setDoc(doc(db, "Users", username), {
-            full_name: full_name, 
-            username: username, 
+            full_name: full_name,
+            username: username,
             password: password,
             insurance_name: insurance_name,
             doctor: doctor
         });
 
-        var curr_user = {full_name: full_name, username: username, password: password, insurance_name: insurance_name, doctor:doctor}
+        var curr_user = { full_name: full_name, username: username, password: password, insurance_name: insurance_name, doctor: doctor }
         var user = window.sessionStorage.setItem("CurrUser", JSON.stringify(curr_user));
         window.location.href = "../dashboard"
     }

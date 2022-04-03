@@ -11,7 +11,7 @@ export default function NavBar() {
                 <Navbar.Brand href="/dashboard">Doc On</Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link href="/request">Request Doctor</Nav.Link>
-                    <Nav.Link href="#link">View Hospitals</Nav.Link>
+                    <Nav.Link href="/hospitals">View Hospitals</Nav.Link>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
