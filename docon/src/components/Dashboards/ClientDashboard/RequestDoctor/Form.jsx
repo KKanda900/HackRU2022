@@ -71,6 +71,15 @@ export const Form = () => {
             })
         }
 
+        await setDoc(doc(db, "Users", curr_user_json.username), {
+            full_name: curr_user_json.full_name, 
+            username: curr_user_json.username, 
+            password: curr_user_json.password,
+            insurance_name: curr_user_json.insurance_name,
+            doctor: curr_user_json.doctor,
+            doctor_name: doc_name
+        }) 
+
         await setDoc(doc(db, "requests", doc_name), {
             doctor_name: doc_name, 
             patient: curr_user_json.full_name,
