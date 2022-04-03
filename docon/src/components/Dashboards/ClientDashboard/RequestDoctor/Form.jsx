@@ -1,4 +1,4 @@
-import { collection, doc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
+import { collection, doc, getDoc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react'
 import { Container, NavDropdown } from 'react-bootstrap'
 import { db } from '../../../../firebase';
@@ -25,7 +25,6 @@ export const Form = () => {
     for (var i = 0; i <= users.length - 1; i++) {
         if (users[i].data().doctor == true) {
             if (curr_user_json.insurance_name == users[i].data().insurance_name) {
-                console.log(users[i].data().doctor)
                 doctors[docInd] = users[i].data()
                 docInd += 1
             }
@@ -42,15 +41,34 @@ export const Form = () => {
     const submitReq = async (e) => {
 
         const doc_name = value
-        var doc_info = null
+        console.log(doc_name)
+        var doc_info = await getDoc(doc(db, "Users", doc_name))
 
-        for (var i = 0; i <= users.length - 1; i++) {
-            if (users[i].data().full_name == doc_name) {
-                if (curr_user_json.insurance_name == users[i].data().insurance_name) {
-                    doc_info = users[i].data()
-                    break
-                }
-            }
+        var patients = null
+
+        doc_info = doc_info.data()
+        if(doc_info.patient == []) {
+            patients = []
+            patients.push(curr_user_json.username)
+            await setDoc(doc(db, "Users", doc_name), {
+                full_name: doc_info.full_name, 
+                username: doc_info.username, 
+                password: doc_info.password,
+                insurance_name: doc_info.insurance_name,
+                doctor: doc_info.doctor, 
+                patient: patients
+            })
+        } else {
+            patients = doc_info.patient
+            patients.push(curr_user_json.username)
+            await setDoc(doc(db, "Users", doc_name), {
+                full_name: doc_info.full_name, 
+                username: doc_info.username, 
+                password: doc_info.password,
+                insurance_name: doc_info.insurance_name,
+                doctor: doc_info.doctor, 
+                patient: patients
+            })
         }
 
         await setDoc(doc(db, "requests", doc_name), {
