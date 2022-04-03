@@ -38,20 +38,6 @@ export const Content = () => {
         <div class='grid grid-cols-3'>
             <div class='col-span-2'>
                 <h3>Overview Of Patients</h3>
-                {/* <Chart
-                    chartType="LineChart"
-                    width="100%"
-                    height="400px"
-                    data={data_1}
-                    options={options_1}
-                />
-                <Chart
-                    chartType="PieChart"
-                    data={data}
-                    options={options}
-                    width={"100%"}
-                    height={"400px"}
-                /> */}
                 {curr_user_json.patient ? (
                 <>
                     <Chart
