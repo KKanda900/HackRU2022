@@ -38,7 +38,7 @@ export const ViewRequests = () => {
         
         console.log("END OF QUERY")
 
-        window.location.href = "./admin" 
+        window.location.href = "/admin" 
     }
 
     return (
