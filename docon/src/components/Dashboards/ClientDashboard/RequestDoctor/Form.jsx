@@ -53,17 +53,11 @@ export const Form = () => {
             }
         }
 
-        var mssgs = []
-        mssgs.push(curr_user_json.full_name)
-        mssgs.push(document.getElementById("req").value)
-
-        await setDoc(doc(db, "Users", doc_info.username), {
-            full_name: doc_info.full_name,
-            username: doc_info.username,
-            password: doc_info.password,
-            insurance_name: doc_info.insurance_name,
-            doctor: doc_info.doctor,
-            requests: mssgs
+        await setDoc(doc(db, "requests", doc_name), {
+            doctor_name: doc_name, 
+            patient: curr_user_json.full_name,
+            username: curr_user_json.username,
+            request: document.getElementById("req").value
         });
 
         window.location.href = "./dashboard"

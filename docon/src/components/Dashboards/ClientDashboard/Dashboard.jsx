@@ -74,6 +74,7 @@ export const Dashboard = () => {
                                 <h1 className='text-3xl'>Appointment Information</h1>
                                 <p>Type: Dental Cleaning</p>
                                 <p>Doctor: Doctor Vu</p>
+                                <p>Day: </p>
                                 <p>Time: 3:00pm</p>
                             </div>
                         </>
