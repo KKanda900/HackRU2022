@@ -1,4 +1,3 @@
-import NavBar from './LoginNavBar'
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import { useState, useEffect } from 'react'
@@ -33,9 +32,9 @@ export default function Signup() {
         // if users doesn't equal null then compare the username and password
         if (users != null) {
             for (var i = 0; i <= users.length - 1; i++) {
-                if (username == users[i].data().username && password == users[i].data().password) {
+                if (username === users[i].data().username && password === users[i].data().password) {
                     alert("Login Exists!")
-                    window.location.href = "./signup"
+                    window.location.href = "/signup"
                 }
             }
         }
@@ -51,7 +50,7 @@ export default function Signup() {
 
         var curr_user = { full_name: full_name, username: username, password: password, insurance_name: insurance_name, doctor: doctor }
         var user = window.sessionStorage.setItem("CurrUser", JSON.stringify(curr_user));
-        if(doctor == true) {
+        if (doctor === true) {
             window.location.href = "../admin"
         } else {
             window.location.href = "../dashboard"
