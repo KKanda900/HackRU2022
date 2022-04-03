@@ -94,7 +94,7 @@ export default function Signup() {
                             <label className="block text-gray-700 text-sm font-bold mb-2" for="insurancename">
                                 Insurance Accepted
                             </label>
-                            <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="insurancename" type="insurancename" placeholder="Insurance Name" />
+                            <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="insurancename" type="insurancename" placeholder="Type None if you don't have any" />
                         </div>
                         <div className="flex items-center justify-between">
                             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={signup} type="button">
@@ -147,9 +147,9 @@ export default function Signup() {
                         </div>
                         <div className="mb-6">
                             <label className="block text-gray-700 text-sm font-bold mb-2" for="insurancename">
-                                Insurance Name
+                                Type None if you don't have any
                             </label>
-                            <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="insurancename" type="insurancename" placeholder="Insurance Name" />
+                            <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="insurancename" type="insurancename" placeholder="Type None if you don't have any" />
                         </div>
                         <div className="flex items-center justify-between">
                             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={signup} type="button">
