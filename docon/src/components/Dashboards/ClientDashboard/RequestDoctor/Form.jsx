@@ -19,7 +19,7 @@ export const Form = () => {
     var curr_user = window.sessionStorage.getItem("CurrUser")
     var curr_user_json = JSON.parse(curr_user)
 
-    const doctors = new Array(5)
+    var doctors = new Array(5)
     var docInd = 0
 
     for (var i = 0; i <= users.length - 1; i++) {
@@ -102,9 +102,15 @@ export const Form = () => {
                 <h3 class='font-railway'>Please Input Your Doctor Request Issue</h3>
                 <div align='left'>
                     <NavDropdown className='items-start' title="List of Doctors" id="basic-nav-dropdown" onSelect={handleSelect}>
-                        {doctors.map((doctor) => (
-                            <NavDropdown.Item eventKey={doctor.full_name}>{doctor.full_name}</NavDropdown.Item>
-                        ))}
+                        {doctors ? (
+                            doctors.map((doctor) => (
+                                <NavDropdown.Item eventKey={doctor.full_name}>{doctor.full_name}</NavDropdown.Item>
+                            ))
+                        ):(
+                            <>
+                            <NavDropdown.Item eventKey="">Currently there are no doctors that accept your insurance but we will submit your request</NavDropdown.Item>
+                            </>
+                        )}
                     </NavDropdown>
                 </div>
                 <textarea id="req" class="w-100 h-80 border-4 outline-black-100 outline-10 hover:outline-2 resize rounded-md caret-black"></textarea>
