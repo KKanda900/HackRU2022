@@ -6,7 +6,7 @@ export const TextField = () => {
 
     useEffect(() => {
         async function getHospitalDataNow() {
-            await axios.get('https://maps.nj.gov/arcgis/rest/services/Framework/Structures_and_Critical_Infrastructure/MapServer/8/query?where=CITY%20%3D%20%27NEW%20BRUNSWICK%27&outFields=*&outSR=4326&f=json')
+            await axios.get(`https://maps.nj.gov/arcgis/rest/services/Framework/Structures_and_Critical_Infrastructure/MapServer/8/query?where=CITY%20%3D%20'EDISON'&outFields=*&outSR=4326&f=json`)
                 .then((response) => {
                     setData(response)
                 }
@@ -14,7 +14,7 @@ export const TextField = () => {
         }
         getHospitalDataNow()
     }, [])
-
+    console.log(data)
     // pushes data to hospitals containing JSON objects
     const hospitals = []
     const consolidateJSON = () => {
